@@ -351,6 +351,6 @@ img::-moz-selection {
 
 .mailtxt{
     position:center;
-    display:inline-block;
+    display:inline-block !important;
 
 }

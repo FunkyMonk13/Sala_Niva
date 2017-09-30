@@ -17,7 +17,7 @@
     <link href="css/grayscale.min.css" rel="stylesheet">
     <link rel="icon" href="../img/faicon.jpg">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar-fixed-top">
     <form id="form1" runat="server">
         <div>
 

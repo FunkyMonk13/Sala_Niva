@@ -16,7 +16,17 @@ public partial class DownloadPage : System.Web.UI.Page
     {
         Label1.Visible = true;
         var email = MailTextBox.Text;
-       // CheckDouble(email);
-        //SendLink(email);
+        CheckDouble(email);
+        SendLink(email);
+    }
+
+    protected void CheckDouble(string email)
+    {
+
+    }
+
+    protected void SendLink(string email)
+    {
+
     }
 }

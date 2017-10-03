@@ -16,32 +16,30 @@ public partial class DownloadPage : System.Web.UI.Page
     {
         Label1.Visible = true;
         var email = MailTextBox.Text;
+        
         SendLink(email);
     }
 
     protected void SendLink(string email)
     {
-        using (SalaNivaEntities db = new SalaNivaEntities())
+
+        SalaNivaEntities db = new SalaNivaEntities();
+        db.Database.Connection.ConnectionString = "data source=funkymonk.database.windows.net;initial catalog=SalaNiva;persist security info=True;user id=Stergianos;password=FunkyMonks13;multipleactiveresultsets=True;application name=EntityFramework&quot;";
+        var check = db.emails.Where(x => x.email == email).ToList();
+        if (check.Count != 0)
         {
-            db.Database.Connection.ConnectionString = "data source=funkymonk.database.windows.net;initial catalog=SalaNiva;persist security info=True;user id=Stergianos;password=FunkyMonks13;MultipleActiveResultSets=True;App=EntityFramework&quot;";
-
-            var check = db.emails.Where(x => x.email == email);
-            if (check.Any())
+            foreach(var c in check)
             {
-                foreach (var c in check)
-                {
-                    c.counter++;
-                }
+                c.counter = c.counter + 1;
             }
-            else
-            {
-
-                emails m = new emails();
-                m.email = email;
-                m.counter = 1;
-                db.emails.Add(m);
-            }
-            db.SaveChanges();
         }
+        else
+        {
+            emails em = new emails();
+            em.email = email;
+            em.counter = 1;
+            db.emails.Add(em);         
+        }
+        db.SaveChanges();
     }
 }

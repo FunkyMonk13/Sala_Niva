@@ -1,6 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title="Home"  description="Home">
-        <siteMapNode url="" title="Download"  description="Download" />
-    </siteMapNode>
-</siteMap>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://salaniva.azurewebsites.net</loc>
+  </url>
+  <url>
+    <loc>http://salaniva.azurewebsites.net/</loc>
+  </url>
+</urlset>
